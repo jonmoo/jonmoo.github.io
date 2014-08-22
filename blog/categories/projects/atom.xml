@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Projects | Captain's Log]]></title>
-  <link href="http://jonmoo.github.io/blog/categories/projects/atom.xml" rel="self"/>
-  <link href="http://jonmoo.github.io/"/>
-  <updated>2014-08-22T11:47:21-05:00</updated>
-  <id>http://jonmoo.github.io/</id>
+  <link href="http://www.captainslog.me/blog/categories/projects/atom.xml" rel="self"/>
+  <link href="http://www.captainslog.me/"/>
+  <updated>2014-08-22T11:55:27-05:00</updated>
+  <id>http://www.captainslog.me/</id>
   <author>
     <name><![CDATA[Jon Moore]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Open Source Storage Server]]></title>
-    <link href="http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server/"/>
+    <link href="http://www.captainslog.me/blog/2009/10/22/open-source-storage-server/"/>
     <updated>2009-10-22T21:29:28-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server</id>
+    <id>http://www.captainslog.me/blog/2009/10/22/open-source-storage-server</id>
     <content type="html"><![CDATA[<p>This is not going to be a full review, but more a general take on things.</p>
 
 <p>Since moving from VMware Server to ESXi to host my virtual machines, I&rsquo;ve been very interested in looking into some more of the advanced features of ESX and ESXi yet most of these require iSCSI.  I remember from a few years back using <a href="http://openfiler.com/">Openfiler</a> to do some simple samba file sharing, and remembered it supported iSCSI as one method of giving out storage.</p>
@@ -32,9 +32,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using Source Control for Config Management]]></title>
-    <link href="http://jonmoo.github.io/blog/2009/04/22/using-source-control-for-config-management/"/>
+    <link href="http://www.captainslog.me/blog/2009/04/22/using-source-control-for-config-management/"/>
     <updated>2009-04-22T15:13:26-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2009/04/22/using-source-control-for-config-management</id>
+    <id>http://www.captainslog.me/blog/2009/04/22/using-source-control-for-config-management</id>
     <content type="html"><![CDATA[<p>A project involving asterisk has forced me to find a way to help manage my configurations.  I&rsquo;m going to give using subversion a go at helping me to keep some level of change control and really simple backups, and I&rsquo;m going to share my thoughts on that here.  This post doesn&rsquo;t have any new details, it&rsquo;s simply a way for me to remember to update :-)</p>
 
 <p>Stay tuned.</p>

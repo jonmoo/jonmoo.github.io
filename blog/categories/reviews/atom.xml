@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Reviews | Captain's Log]]></title>
-  <link href="http://jonmoo.github.io/blog/categories/reviews/atom.xml" rel="self"/>
-  <link href="http://jonmoo.github.io/"/>
-  <updated>2014-08-22T11:47:21-05:00</updated>
-  <id>http://jonmoo.github.io/</id>
+  <link href="http://www.captainslog.me/blog/categories/reviews/atom.xml" rel="self"/>
+  <link href="http://www.captainslog.me/"/>
+  <updated>2014-08-22T11:55:27-05:00</updated>
+  <id>http://www.captainslog.me/</id>
   <author>
     <name><![CDATA[Jon Moore]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Quick Review of the Aastra 57i]]></title>
-    <link href="http://jonmoo.github.io/blog/2009/04/21/quick-review-of-the-aastra-57i/"/>
+    <link href="http://www.captainslog.me/blog/2009/04/21/quick-review-of-the-aastra-57i/"/>
     <updated>2009-04-21T14:16:21-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2009/04/21/quick-review-of-the-aastra-57i</id>
+    <id>http://www.captainslog.me/blog/2009/04/21/quick-review-of-the-aastra-57i</id>
     <content type="html"><![CDATA[<p>As part of an project, I recently received a few Aastra 57i SIP phones at work.  After spending a few days with them, I&rsquo;ve decided to write up a short review of something of the things I like (and don&rsquo;t like) about these phones.</p>
 
 <p>Let&rsquo;s start with the phone itself.  It&rsquo;s not much bigger than a normal telephone, and has the same basic &ldquo;fancy IP phone&rdquo; look you see with Cisco and others.  One thing does stand out; the screen.  It&rsquo;s a fairly large screen, and backlight with a white light, instead of the normal Aastra golden brown color.  Obviously, this makes it much more appealing on the eyes.  However good, there is some bad.  The viewing angle of the screen is not near as good as say the 480i, but still useable.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Notes | Captain's Log]]></title>
-  <link href="http://jonmoo.github.io/blog/categories/notes/atom.xml" rel="self"/>
-  <link href="http://jonmoo.github.io/"/>
-  <updated>2014-08-22T11:47:21-05:00</updated>
-  <id>http://jonmoo.github.io/</id>
+  <link href="http://www.captainslog.me/blog/categories/notes/atom.xml" rel="self"/>
+  <link href="http://www.captainslog.me/"/>
+  <updated>2014-08-22T11:55:27-05:00</updated>
+  <id>http://www.captainslog.me/</id>
   <author>
     <name><![CDATA[Jon Moore]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using Smart to Monitor Hard Drive Health]]></title>
-    <link href="http://jonmoo.github.io/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/"/>
+    <link href="http://www.captainslog.me/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/"/>
     <updated>2014-08-11T18:17:17-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2014/08/11/using-smart-to-monitor-hard-drive-health</id>
+    <id>http://www.captainslog.me/blog/2014/08/11/using-smart-to-monitor-hard-drive-health</id>
     <content type="html"><![CDATA[<p>Notes on using smartmontools on Ubuntu.</p>
 
 <p><strong>Installation</strong>
@@ -54,9 +54,9 @@ $sudo smartctl -t long $device
   
   <entry>
     <title type="html"><![CDATA[CrashplanDesktop on Ubuntu 14.04]]></title>
-    <link href="http://jonmoo.github.io/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/"/>
+    <link href="http://www.captainslog.me/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/"/>
     <updated>2014-07-31T19:15:11-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04</id>
+    <id>http://www.captainslog.me/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04</id>
     <content type="html"><![CDATA[<p>I recently tried to install Crashplan 3 on my Ubuntu 14.04 desktop.  All went well, up until I attempted to start CrashplanDesktop.  No obvious errors and nothing useful to me in the ui_output.log file.</p>
 
 <p>After a short bit of searching, I found <a href="http://geekphreek.com/crashplan-3-5-3-on-xubuntu-14-04-crash-fix/">this blog post</a> with some simple instructions found in the Crashplan FAQ.  After following the instructions, CrashplanDesktop opened without issue.</p>
@@ -65,9 +65,9 @@ $sudo smartctl -t long $device
   
   <entry>
     <title type="html"><![CDATA[CentOS 6 KVM Installation]]></title>
-    <link href="http://jonmoo.github.io/blog/2014/04/22/centos-6-kvm-installation/"/>
+    <link href="http://www.captainslog.me/blog/2014/04/22/centos-6-kvm-installation/"/>
     <updated>2014-04-22T15:20:11-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2014/04/22/centos-6-kvm-installation</id>
+    <id>http://www.captainslog.me/blog/2014/04/22/centos-6-kvm-installation</id>
     <content type="html"><![CDATA[<h3>Install required KVM pacakages</h3>
 
 <p>In order to use KVM several packages must first be installed. These can easily be installed with the correct yum group.</p>
@@ -96,26 +96,29 @@ $ virsh -c qemu:///system list
   
   <entry>
     <title type="html"><![CDATA[Mikrotik Winbox on Fedora 20]]></title>
-    <link href="http://jonmoo.github.io/blog/2014/03/11/mikrotik-winbox-on-fedora-20/"/>
+    <link href="http://www.captainslog.me/blog/2014/03/11/mikrotik-winbox-on-fedora-20/"/>
     <updated>2014-03-11T09:00:33-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2014/03/11/mikrotik-winbox-on-fedora-20</id>
+    <id>http://www.captainslog.me/blog/2014/03/11/mikrotik-winbox-on-fedora-20</id>
     <content type="html"><![CDATA[<p>Just a short note on what is needed to get <a href="http://wiki.mikrotik.com/wiki/Winbox">winbox</a> running on Fedora 20 with wine.  This will most likely be true for other distributions as well.</p>
 
-<p>Install wine and some related packages.<br/>
-<code>#sudo yum install wine wine-core wine-wow wine-desktop wine-mono mingw32-wine-gecko</code></p>
+<p>Install wine and some related packages.</p>
+
+<pre><code class="bash">$ sudo yum install wine wine-core wine-wow wine-desktop wine-mono mingw32-wine-gecko
+</code></pre>
 
 <p>Run winbox with wine
-<code>#wine winbox.exe</code></p>
-
-<p>I also followed the advice from <a href="http://askubuntu.com/questions/219791/improve-gui-appearance-of-wine-applications">this askubuntu thread</a> to make wine look a little better.  Overall it worked out pretty well.</p>
+<code>bash
+$ wine winbox.exe
+</code>
+I also followed the advice from <a href="http://askubuntu.com/questions/219791/improve-gui-appearance-of-wine-applications">this askubuntu thread</a> to make wine look a little better.  Overall it worked out pretty well.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubiquiti UniFi Controller Address From Dhcp]]></title>
-    <link href="http://jonmoo.github.io/blog/2014/02/03/312/"/>
+    <link href="http://www.captainslog.me/blog/2014/02/03/312/"/>
     <updated>2014-02-03T21:04:16-06:00</updated>
-    <id>http://jonmoo.github.io/blog/2014/02/03/312</id>
+    <id>http://www.captainslog.me/blog/2014/02/03/312</id>
     <content type="html"><![CDATA[<p>During a recent Ubiquiti UniFi deployment, it was necessary to have the UniFi controller running on a different network then what the access points where on.  Instead of manually having to adopt each access point, the Ubiquiti wiki had a nice FAQ entry on setting up DHCP options to allow the access points to locate the controller.  The following example comes from the <a href="http://community.ubnt.com/t5/UniFi-Controller-Installation/UniFi-Layer-3-methods-for-UAP-adoption-and-management/ta-p/455643#Section_4">Ubiquiti</a> knowledge base and is only slightly edited.</p>
 
 <p>Both sections need to be added to <code>dhcpd.conf</code>.</p>

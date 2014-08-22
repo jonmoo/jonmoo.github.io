@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Other | Captain's Log]]></title>
-  <link href="http://jonmoo.github.io/blog/categories/other/atom.xml" rel="self"/>
-  <link href="http://jonmoo.github.io/"/>
-  <updated>2014-08-22T11:47:21-05:00</updated>
-  <id>http://jonmoo.github.io/</id>
+  <link href="http://www.captainslog.me/blog/categories/other/atom.xml" rel="self"/>
+  <link href="http://www.captainslog.me/"/>
+  <updated>2014-08-22T11:55:27-05:00</updated>
+  <id>http://www.captainslog.me/</id>
   <author>
     <name><![CDATA[Jon Moore]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Enable Thunderbird Global Search in Fedora]]></title>
-    <link href="http://jonmoo.github.io/blog/2010/09/16/enabled-thunderbird-global-search-in-fedora/"/>
+    <link href="http://www.captainslog.me/blog/2010/09/16/enabled-thunderbird-global-search-in-fedora/"/>
     <updated>2010-09-16T14:38:35-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2010/09/16/enabled-thunderbird-global-search-in-fedora</id>
+    <id>http://www.captainslog.me/blog/2010/09/16/enabled-thunderbird-global-search-in-fedora</id>
     <content type="html"><![CDATA[<p>If you&rsquo;ve just installed Thunderbird on Fedora 13, you&rsquo;ve probably noticed the Global Search bar is missing.  At least, this is one of the first things I noticed. After using Thunderbird 3.x for sometime on Windows I&rsquo;ve really come to love this feature.</p>
 
 <p>It seems the default configuration on Fedora doesn&rsquo;t enable this feature by default, however it is simple to get working.  Go to the Preferences menu, Advanced section and check &ldquo;Enable Global Search and Indexer&rdquo;.  After this, restart Thunderbird and it will begin indexing your mail.  After which, the Global Search should work as expected.</p>
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[Open Source Storage Server]]></title>
-    <link href="http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server/"/>
+    <link href="http://www.captainslog.me/blog/2009/10/22/open-source-storage-server/"/>
     <updated>2009-10-22T21:29:28-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server</id>
+    <id>http://www.captainslog.me/blog/2009/10/22/open-source-storage-server</id>
     <content type="html"><![CDATA[<p>This is not going to be a full review, but more a general take on things.</p>
 
 <p>Since moving from VMware Server to ESXi to host my virtual machines, I&rsquo;ve been very interested in looking into some more of the advanced features of ESX and ESXi yet most of these require iSCSI.  I remember from a few years back using <a href="http://openfiler.com/">Openfiler</a> to do some simple samba file sharing, and remembered it supported iSCSI as one method of giving out storage.</p>
@@ -43,9 +43,9 @@
   
   <entry>
     <title type="html"><![CDATA[Every Administrator Needs Two Accounts..]]></title>
-    <link href="http://jonmoo.github.io/blog/2008/12/31/every-administrator-needs-two-accounts/"/>
+    <link href="http://www.captainslog.me/blog/2008/12/31/every-administrator-needs-two-accounts/"/>
     <updated>2008-12-31T22:32:33-06:00</updated>
-    <id>http://jonmoo.github.io/blog/2008/12/31/every-administrator-needs-two-accounts</id>
+    <id>http://www.captainslog.me/blog/2008/12/31/every-administrator-needs-two-accounts</id>
     <content type="html"><![CDATA[<p>I assume you&rsquo;ve had your hands on at least one set of administrative credentials in your life.  I&rsquo;d also make the assumption that you&rsquo;ve used that account as your <em>everyday account</em>.  You know, the one we use to check mail, surf the web, update facebook, download porn&hellip; you know, that kind of stuff.</p>
 
 <p>That&rsquo;s a <strong>bad</strong> idea.</p>
@@ -72,18 +72,18 @@
   
   <entry>
     <title type="html"><![CDATA[Another Insightful Comic..]]></title>
-    <link href="http://jonmoo.github.io/blog/2008/11/14/another-insightful-comic/"/>
+    <link href="http://www.captainslog.me/blog/2008/11/14/another-insightful-comic/"/>
     <updated>2008-11-14T08:50:56-06:00</updated>
-    <id>http://jonmoo.github.io/blog/2008/11/14/another-insightful-comic</id>
+    <id>http://www.captainslog.me/blog/2008/11/14/another-insightful-comic</id>
     <content type="html"><![CDATA[<p>Reading the feeds today, and came across todays <a href="http://xkcd.com/504/">xkcd comic</a>.  Very funny.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[AsylumLAN 33 - November 15-16]]></title>
-    <link href="http://jonmoo.github.io/blog/2008/10/20/asylumlan-33-november-15-16/"/>
+    <link href="http://www.captainslog.me/blog/2008/10/20/asylumlan-33-november-15-16/"/>
     <updated>2008-10-20T16:55:28-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2008/10/20/asylumlan-33-november-15-16</id>
+    <id>http://www.captainslog.me/blog/2008/10/20/asylumlan-33-november-15-16</id>
     <content type="html"><![CDATA[<p>It&rsquo;s that time ago.  Another AsylumLAN is set for the middle of November.   If you&rsquo;re into gaming I highly recommend this event.  Details below or check out their website for more information.</p>
 
 <ul>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Rants | Captain's Log]]></title>
-  <link href="http://jonmoo.github.io/blog/categories/rants/atom.xml" rel="self"/>
-  <link href="http://jonmoo.github.io/"/>
-  <updated>2014-08-22T11:47:21-05:00</updated>
-  <id>http://jonmoo.github.io/</id>
+  <link href="http://www.captainslog.me/blog/categories/rants/atom.xml" rel="self"/>
+  <link href="http://www.captainslog.me/"/>
+  <updated>2014-08-22T11:55:27-05:00</updated>
+  <id>http://www.captainslog.me/</id>
   <author>
     <name><![CDATA[Jon Moore]]></name>
     
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Why Use ZFS With FreeNAS?]]></title>
-    <link href="http://jonmoo.github.io/blog/2010/03/08/why-use-zfs-with-freenas/"/>
+    <link href="http://www.captainslog.me/blog/2010/03/08/why-use-zfs-with-freenas/"/>
     <updated>2010-03-08T21:43:29-06:00</updated>
-    <id>http://jonmoo.github.io/blog/2010/03/08/why-use-zfs-with-freenas</id>
+    <id>http://www.captainslog.me/blog/2010/03/08/why-use-zfs-with-freenas</id>
     <content type="html"><![CDATA[<p>I recently started using FreeNAS again after exploring other options that existed, such as openfiler, and now that I&rsquo;ve returned, ZFS seems to be the cool thing to do.  After reading, watching videos and playing with ZFS I&rsquo;m sold on all the features it offers.  However, I must ask, is there a compelling reason to use ZFS over UFS for a single disk?  I&rsquo;d really like to see some comments on this.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Simple Rules to Keep You Smart With Email]]></title>
-    <link href="http://jonmoo.github.io/blog/2009/05/06/simple-rules-to-keep-you-smart-with-email/"/>
+    <link href="http://www.captainslog.me/blog/2009/05/06/simple-rules-to-keep-you-smart-with-email/"/>
     <updated>2009-05-06T22:15:48-05:00</updated>
-    <id>http://jonmoo.github.io/blog/2009/05/06/simple-rules-to-keep-you-smart-with-email</id>
+    <id>http://www.captainslog.me/blog/2009/05/06/simple-rules-to-keep-you-smart-with-email</id>
     <content type="html"><![CDATA[<p>When using email, you should always keep the following rules suggestions in mind.  Most of these apply to mailing lists, but could just as easily make any email communication (and maybe even instant messaging) better.</p>
 
 <p>First, don&rsquo;t top post.  Not only is top posting counter-productive it is annoying.  Also, if the person before you sucks at life, don&rsquo;t follow with it.  Remove everything but the relevant parts, and post under that.  It makes life better for everyone.</p>
@@ -43,9 +43,9 @@
   
   <entry>
     <title type="html"><![CDATA[Why You Shouldn't Abuse a Technology..]]></title>
-    <link href="http://jonmoo.github.io/blog/2009/01/03/why-you-shouldnt-abuse-a-technology/"/>
+    <link href="http://www.captainslog.me/blog/2009/01/03/why-you-shouldnt-abuse-a-technology/"/>
     <updated>2009-01-03T21:29:09-06:00</updated>
-    <id>http://jonmoo.github.io/blog/2009/01/03/why-you-shouldnt-abuse-a-technology</id>
+    <id>http://www.captainslog.me/blog/2009/01/03/why-you-shouldnt-abuse-a-technology</id>
     <content type="html"><![CDATA[<p>I was reading <a href="http://lifehacker.com/5122848/hard-lessons-in-the-importance-of-backups-journalspace-wiped-out">this</a> <a href="http://journalspace.com/this_is_the_way_the_world_ends/not_with_a_bang_but_a_whimper.html">story</a> on <a href="http://lifehacker.com">lifehacker</a> today and just wanted to drop my comments on the subject.</p>
 
 <p>Quite often, I&rsquo;ve had this conversation with people..</p>
@@ -67,9 +67,9 @@
   
   <entry>
     <title type="html"><![CDATA[Every Administrator Needs Two Accounts..]]></title>
-    <link href="http://jonmoo.github.io/blog/2008/12/31/every-administrator-needs-two-accounts/"/>
+    <link href="http://www.captainslog.me/blog/2008/12/31/every-administrator-needs-two-accounts/"/>
     <updated>2008-12-31T22:32:33-06:00</updated>
-    <id>http://jonmoo.github.io/blog/2008/12/31/every-administrator-needs-two-accounts</id>
+    <id>http://www.captainslog.me/blog/2008/12/31/every-administrator-needs-two-accounts</id>
     <content type="html"><![CDATA[<p>I assume you&rsquo;ve had your hands on at least one set of administrative credentials in your life.  I&rsquo;d also make the assumption that you&rsquo;ve used that account as your <em>everyday account</em>.  You know, the one we use to check mail, surf the web, update facebook, download porn&hellip; you know, that kind of stuff.</p>
 
 <p>That&rsquo;s a <strong>bad</strong> idea.</p>
