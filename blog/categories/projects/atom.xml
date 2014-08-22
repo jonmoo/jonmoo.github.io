@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Projects | Captain's Log]]></title>
+  <link href="http://jonmoo.github.io/blog/categories/projects/atom.xml" rel="self"/>
+  <link href="http://jonmoo.github.io/"/>
+  <updated>2014-08-22T11:47:21-05:00</updated>
+  <id>http://jonmoo.github.io/</id>
+  <author>
+    <name><![CDATA[Jon Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Open Source Storage Server]]></title>
+    <link href="http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server/"/>
+    <updated>2009-10-22T21:29:28-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server</id>
+    <content type="html"><![CDATA[<p>This is not going to be a full review, but more a general take on things.</p>
+
+<p>Since moving from VMware Server to ESXi to host my virtual machines, I&rsquo;ve been very interested in looking into some more of the advanced features of ESX and ESXi yet most of these require iSCSI.  I remember from a few years back using <a href="http://openfiler.com/">Openfiler</a> to do some simple samba file sharing, and remembered it supported iSCSI as one method of giving out storage.</p>
+
+<p>Now, I&rsquo;ve yet to use any of the features of ESX that require iSCSI, or even setup <a href="http://openfiler.com/">Openfiler</a> to export storage via iSCSI, but I have been using it for simple file sharing and must say I&rsquo;m quite impressed.</p>
+
+<p>Setup is a breeze, taking about 20 minutes on an older PC. Management is done almost entirely through a <a href="http://openfiler.com/products/screenshots/">web interface</a>, that is very easy to use.  Unlink many of the other appliance packages out there, the web interface is very simple and straight forward.  Very much impressed with that.</p>
+
+<p>Over the next few months I&rsquo;ll be exploring <a href="http://openfiler.com/">Openfiler</a> much more, and hopefully getting into some of it&rsquo;s more advanced features including interface bonding, md devices and clustering.  I plan to keep updating as things more along.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Source Control for Config Management]]></title>
+    <link href="http://jonmoo.github.io/blog/2009/04/22/using-source-control-for-config-management/"/>
+    <updated>2009-04-22T15:13:26-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2009/04/22/using-source-control-for-config-management</id>
+    <content type="html"><![CDATA[<p>A project involving asterisk has forced me to find a way to help manage my configurations.  I&rsquo;m going to give using subversion a go at helping me to keep some level of change control and really simple backups, and I&rsquo;m going to share my thoughts on that here.  This post doesn&rsquo;t have any new details, it&rsquo;s simply a way for me to remember to update :-)</p>
+
+<p>Stay tuned.</p>
+]]></content>
+  </entry>
+  
+</feed>

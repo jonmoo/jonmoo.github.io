@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Captain's Log</title>
+  <meta name="author" content="Jon Moore">
+
+  
+  <meta name="description" content="This years OhioLinux Fest starts tomorrow and runs until Sunday. I&rsquo;ll be there. You should to. More info at the OhioLinux website
+">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jonmoo.github.io/posts/4">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Captain's Log" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Captain's Log</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jonmoo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/09/24/ohiolinux-september-25-27-2009/">OhioLinux September 25-27, 2009</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-09-24T09:05:04-05:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:05 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This years OhioLinux Fest starts tomorrow and runs until Sunday.  I&rsquo;ll be there.  You should to.  More info at <a href="http://www.ohiolinux.org">the OhioLinux website</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/08/26/modify-windows-xp-routing-table/">Modify Windows XP Routing Table</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-08-26T21:19:13-05:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:19 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>During some network changes I&rsquo;ve found the need to modify the routing table.</p>
+
+<p>To change the default route on Windows XP (and possibly Windows Vista, 2000, etc) you use the route command.  The syntax is pretty simple, here is a quick example&hellip;.</p>
+
+<pre><code>route change 0.0.0.0 mask 0.0.0.0 172.18.12.120
+</code></pre>
+
+<p>To delete or add routes, simply change the keyword change to either add or delete.</p>
+
+<pre><code>route add 192.168.0.0 mask 255.255.255.0 10.10.0.50
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/24/check-speed-of-connected-link-in-linux/">Check Speed of Connected Link in Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-07-24T16:09:22-05:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>4:09 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&rsquo;ve ever wanted to check on the status of your Ethernet links, you&rsquo;ve probably used the ip commands (or ifconfig) to view some basic information.  However, you might have noticed these commands do not tell you what the current link speed is, or other possibly important details.  That&rsquo;s where <code>ethtool</code> comes in.</p>
+
+<pre><code>[jonmoore@megaton ~]$ sudo ethtool eth0
+Settings for eth0:
+Supported ports: [ MII ]
+Supported link modes:   10baseT/Half 10baseT/Full
+100baseT/Half 100baseT/Full
+1000baseT/Full
+Supports auto-negotiation: Yes
+Advertised link modes:  10baseT/Half 10baseT/Full
+100baseT/Half 100baseT/Full
+1000baseT/Full
+Advertised auto-negotiation: Yes
+Speed: &lt;strong&gt;1000Mb/s&lt;/strong&gt;
+Duplex: &lt;strong&gt;Full&lt;/strong&gt;
+Port: MII
+PHYAD: 1
+Transceiver: external
+Auto-negotiation: on
+Supports Wake-on: g
+Wake-on: d
+Link detected: yes
+</code></pre>
+
+<p>As you can see, <code>ethtool</code> will show you the support modes, as well as the current mode.  From the above example, I&rsquo;m currently connected at 1000Mb/s at Full Duplex.  Very nice.</p>
+
+<p>Check out the ethtool man page for more useful commands.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/23/cancel-a-traceroute-on-cisco-devices/">Cancel a Traceroute on Cisco Devices</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-07-23T08:49:47-05:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2009</span></span> <span class='time'>8:49 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Many times I&rsquo;ve started a traceroute to either a mistyped IP address, the wrong IP or something else that I would really rather not wait for 30 hops to time out before moving on.  When doing the traceroute the device tells yous to &ldquo;Type escape sequence to abort,&rdquo; but doesn&rsquo;t share what exactly this escape sequence is.  After a bit of googling and finding a few references <a href="http://zitizonx4.wordpress.com/2009/06/23/how-to-break-a-traceroute-on-cisco-devices/"> here </a> and <a href="http://www.networkliquidators.com/article-cisco-ccna-certification-five-key-combinations-you-should-know.asp">here </a> I&rsquo;ve found an answer.</p>
+
+<p>This elusive key combination is CTRL+SHIFT+6 twice.  I&rsquo;ve had mixed results using it, but it appears, that holding CTRL+SHIFT while hitting 6 works sometimes, and others retyping the entire combination works.  Either way, it&rsquo;s been a help.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/29/extend-the-timeout-on-ssh-connections/">Extend the Timeout on SSH Connections</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-05-29T13:56:00-05:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>1:56 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A quick google search will quickly answer this question, but I&rsquo;ve found myself asking it a few times lately.  Often when I let an SSH session go idle, I&rsquo;ll end up being disconnected.  By adding <code>ServerAliveInterval 60</code> to <code>~/.ssh/config</code> I&rsquo;ve managed to limit this from happening.</p>
+
+<p>There is also a similar server side fix for this.  Consult <code>man ssh_config</code> and <code>man sshd_config</code> for more details.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/15/counting-occurance-of-word-in-list/">Counting Occurance of Word in List</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-05-15T09:21:38-05:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:21 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve had a need to count the number of times a certain value (in this case, a word) appears in a list when using OpenOffice.org.</p>
+
+<p>Here was my problem.  I had a long list of values, each had a status of either &ldquo;good&rdquo;, &ldquo;bad&rdquo;, or &ldquo;incomplete&rdquo;.  I wanted to count the number of times each of the follow occurred.  It turned out to be pretty easy.</p>
+
+<p>Create the following formula where you want the count to be.<code>COUNTIF(range,expression)</code> and bobs your uncle.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/14/connecting-to-serial-devices-with-minicom/">Connecting to Serial Devices With Minicom</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-05-14T14:04:54-05:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>2:04 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve often found the need to break out the console cable to configure a router, switch, or other device that only had a serial console.  On Windows, most folks fall back on the good old hyper terminal to get the job done.  This works great, as long as your on Windows.</p>
+
+<p>Since I&rsquo;ve been getting myself to use Linux (specifically Archlinux) more and more, I&rsquo;ve managed to find a way to connect to these devices in a fairly straightforward manner.</p>
+
+<p>Here comes minicom.  Included in most package management systems, is just a {yum,apt,pacman} away, and you&rsquo;re ready to roll.  On first run, you need to execute <code>minicom -s</code> and setup some basic configurations options.  Namely, if you&rsquo;re connecting to a Cisco device, set the port speed to 9600 baud, and the rest of the defaults should be fine.</p>
+
+<p>At this point, you&rsquo;re ready to start configuring.  Enjoy.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/06/simple-rules-to-keep-you-smart-with-email/">Simple Rules to Keep You Smart With Email</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-05-06T22:15:48-05:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>10:15 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When using email, you should always keep the following rules suggestions in mind.  Most of these apply to mailing lists, but could just as easily make any email communication (and maybe even instant messaging) better.</p>
+
+<p>First, don&rsquo;t top post.  Not only is top posting counter-productive it is annoying.  Also, if the person before you sucks at life, don&rsquo;t follow with it.  Remove everything but the relevant parts, and post under that.  It makes life better for everyone.</p>
+
+<p>Along with the last one, don&rsquo;t include unnecessary posts in your reply.  More than likely, most people will choose not to follow the first suggestion, so lets alteast remove the parts of the message that are unneeded.  If you&rsquo;re reply to a long message, break it apart.  Put your replies inline, so others can better read them..</p>
+
+<p>Keep the signature short.  If you feel you must include a 12 line signature complete with pictures, color and blink tags, only do so once.  A simple sig is great.  A simple sig 24 times is annoying.  Don&rsquo;t do it.  Any mailer worth using allows you to configure when to add a sig, so don&rsquo;t add one on replies.</p>
+
+<p>Stay on topic.  If the current thread has sparked a new topic, start it elsewhere.  Threads and topics enjoy having an exclusive relationship, so keep it that way.  If you&rsquo;re changing the thread, atleast warn people (<em>New Thread Topic (WAS: old thread)</em>).</p>
+
+<p>That&rsquo;s all for now.  (actually, that&rsquo;s just the 4 things that annoyed me while checking my mail tonight)  I&rsquo;ll expand as more annoying things come to light.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/02/asterisk-with-pri-support/">Asterisk With PRI Support</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-05-02T10:18:51-05:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2009</span></span> <span class='time'>10:18 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&rsquo;re going to be using Asterisk with a PRI card, there are some important steps you have to follow in the right order.</p>
+
+<p>Normally, I install the zaptel package then install Asterisk.  This is all great, until I need PRI support.  For that, I must also install the libpri package.</p>
+
+<p>Important to note, for asterisk to get PRI support you must install libpri BEFORE any other package.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/24/subversion-over-ssh/">Subversion Over SSH</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-04-24T10:06:11-05:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>10:06 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Continuing with my exploration of using some form of version control to hand configuration file managent, I&rsquo;ve been using svn over ssh.</p>
+
+<p>Setting up svn access over ssh is a fairly stright forward process.  The first set is to create the actual repo on the server.</p>
+
+<pre><code>mkdir /var/repo/configs
+</code></pre>
+
+<p>Then use svnadmin to create a repository in that directory.</p>
+
+<pre><code>svnadmin create /var/repo/configs
+</code></pre>
+
+<p>Now that you have you repoistority created, it&rsquo;s time to start using it.  If you have an already existing set of files you&rsquo;d like to import, do something similar to this&hellip;</p>
+
+<pre><code>svn import . svn+ssh:///var/repo/configs -m "Initial import"
+</code></pre>
+
+<p>If you&rsquo;re just starting out, checkout a working copy like such..</p>
+
+<pre><code> svn checkout svn+ssh:///var/repo/configs .
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/5">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/3">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/">Using Smart to Monitor Hard Drive Health</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/">CrashplanDesktop on Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/06/disable-networkmanager-in-centos-6/">Disable NetworkManager in CentOS 6</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/22/centos-6-kvm-installation/">CentOS 6 KVM Installation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/11/mikrotik-winbox-on-fedora-20/">Mikrotik Winbox on Fedora 20</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/105001737019747914994?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jon Moore -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

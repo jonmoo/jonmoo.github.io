@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Captain's Log</title>
+  <meta name="author" content="Jon Moore">
+
+  
+  <meta name="description" content="This post is mostly being made for me personal notes, but maybe it will assist others at some point. I&rsquo;m always forgetting the various &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jonmoo.github.io/posts/2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Captain's Log" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Captain's Log</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jonmoo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/23/289/">CentOS Network Configuration</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-10-23T10:35:01-05:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2012</span></span> <span class='time'>10:35 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This post is mostly being made for me personal notes, but maybe it will assist others at some point. I&rsquo;m always forgetting the various configuration files involved with setting up networking on a CentOS host. I have decided to document the process I go through each time to help me remember in the future. Most of this information comes from various forums, CentOS documentation and the man pages. If you see something wrong, or a better way to do this, please comment.</p>
+
+<p><strong>/etc/sysconfig/network-scripts/ifcfg-eth0</strong>
+Device specific information:</p>
+
+<p><em>For DHCP</em>
+<code>DEVICE=eth0
+BOOTPROTO=dhcp
+ONBOOT=yes</code></p>
+
+<p><em>For fixed / static address</em>
+<code>DEVICE=eth0
+BOOTPROTO=none
+ONBOOT=yes
+NETWORK=172.24.1.0
+NETMASK=255.255.255.0
+IPADDR=172.24.1.10</code></p>
+
+<p><strong>/etc/sysconfig/network</strong>
+System wide networking information:</p>
+
+<p><code>NETWORKING=yes
+HOSTNAME=server.example.com
+GATEWAY=172.24.1.1</code></p>
+
+<p><strong>/etc/resolv.conf</strong>
+DNS server information</p>
+
+<p><code>nameserver 8.8.8.8
+nameserver 8.8.4.4</code></p>
+
+<p>After all is set, <code>$service network restart</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/30/locating-postgresql-data-directory/">Locating PostgreSQL Data Directory</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-12-30T13:55:23-06:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>1:55 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Use a simple psql query to find the location of the data directory
+`postgres=# SHOW data_directory;</p>
+
+<h2>data_directory</h2>
+
+<p>/var/lib/postgresql/8.4/main
+(1 row)`</p>
+
+<p>Or
+`
+postgres=# select setting from pg_settings where name = &lsquo;data_directory&rsquo;;</p>
+
+<pre><code>       setting
+</code></pre>
+
+<hr />
+
+<p> /var/lib/postgresql/8.4/main
+(1 row)`</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/16/enabled-thunderbird-global-search-in-fedora/">Enable Thunderbird Global Search in Fedora</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-09-16T14:38:35-05:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>2:38 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&rsquo;ve just installed Thunderbird on Fedora 13, you&rsquo;ve probably noticed the Global Search bar is missing.  At least, this is one of the first things I noticed. After using Thunderbird 3.x for sometime on Windows I&rsquo;ve really come to love this feature.</p>
+
+<p>It seems the default configuration on Fedora doesn&rsquo;t enable this feature by default, however it is simple to get working.  Go to the Preferences menu, Advanced section and check &ldquo;Enable Global Search and Indexer&rdquo;.  After this, restart Thunderbird and it will begin indexing your mail.  After which, the Global Search should work as expected.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/19/moving-home-to-new-partition/">Moving /home to New Partition</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-07-19T11:48:21-05:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>11:48 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If /home is just a folder under / and you have a reason to put this on it&rsquo;s own partition the process isn&rsquo;t that difficult.  Here is the steps I followed to do this.</p>
+
+<p>First, create the new partition on the drive.  I was using LVM, so I created a new logical volume, do whatever makes sense for your system here.</p>
+
+<p>Make a place for the new home partition to be mounted while we transfer files.</p>
+
+<pre><code>mkdir /mnt/newhome
+mount -t   /mnt/newhome
+</code></pre>
+
+<p>Move files from current /home to this new location.</p>
+
+<pre><code>cd /home
+cp -ax * /mnt/newhome
+</code></pre>
+
+<p>Once all the files have copied, remove the old home directory, and mount the new partition in its place.</p>
+
+<pre><code>rm -r /home
+mount  -t   /home
+</code></pre>
+
+<p>Edit /etc/fstab for the new partition, and you&rsquo;re done.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/22/lock-and-unlock-linux-accounts/">Lock and Unlock Linux Accounts</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-04-22T08:37:06-05:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2010</span></span> <span class='time'>8:37 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Using <code>passwd</code> it is possible to quickly lock and unlock Linux accounts.</p>
+
+<p>To lock an account.</p>
+
+<pre><code>passwd -l &lt;code&gt;username&lt;/code&gt;
+</code></pre>
+
+<p>To unlock an account.</p>
+
+<pre><code>passwd -u &lt;code&gt;username&lt;/code&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/21/using-telnet-to-test-pop-server/">Using Telnet to Test POP Server</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-04-21T09:52:28-05:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2010</span></span> <span class='time'>9:52 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Using telnet (or putty) it&rsquo;s possible to some simple tests against a POP server.  By no means exhaustive, it can give you insights in where to start troubleshooting.</p>
+
+<p>First, using telnet and open a connection the remote POP server</p>
+
+<pre><code>telnet mailserver 110
+</code></pre>
+
+<p>Where <code>mailserver</code> is the mail server you want to connect to.  Note that port <code>110</code> is the default port for POP, but could be different depending on your servers settings.</p>
+
+<p>Once connected, use <code>USER</code> and <code>PASS</code> to login.</p>
+
+<pre><code>[root@ms1 ~] # telnet localhost 110
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
++OK POP3 localhost v2001.78rh server ready
+USER &lt;code&gt;username&lt;/code&gt;
++OK User name accepted, password please
+PASS &lt;code&gt;password&lt;/code&gt;
++OK Mailbox open, 1 messages
+QUIT
++OK Sayonara
+Connection closed by foreign host.
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/20/linux-ipv6-neighbor-discovery/">Linux IPv6 Neighbor Discovery</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-04-20T16:37:54-05:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>4:37 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Using <code>ping6</code> and <code>ip neigh</code> it&rsquo;s possible to discover other IPv6 hosts on your local network using the link-local addresses.
+First, use ping6 to ping all hosts on the local network using the IPv6 link-local address</p>
+
+<pre><code>ping6 -c 2 -I eth0 ff02::1
+</code></pre>
+
+<p>Then, use <code>ip neigh</code> to show a list of IPv6 enable hosts on the local network</p>
+
+<pre><code>ip -f inet6 neigh
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/08/why-use-zfs-with-freenas/">Why Use ZFS With FreeNAS?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-03-08T21:43:29-06:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>9:43 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently started using FreeNAS again after exploring other options that existed, such as openfiler, and now that I&rsquo;ve returned, ZFS seems to be the cool thing to do.  After reading, watching videos and playing with ZFS I&rsquo;m sold on all the features it offers.  However, I must ask, is there a compelling reason to use ZFS over UFS for a single disk?  I&rsquo;d really like to see some comments on this.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/02/26/rewrite-incoming-callerid/">Rewrite Incoming CallerID</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-02-26T15:38:27-06:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>3:38 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>We&rsquo;re using asterisk, and as part of the dial plan, a 9 is required before the number to make calls out to the PSTN.  Since our phones have a incoming call log, it would be very convient to have asterisk rewrite the CallerID value on calls from the PSTN to include this leading digit.  I found this was rather easy to accomplish.  Adding something similar to the following to whatever extension handles your incoming calls, all CallerID numbers will have a 9 added to the front.
+<code>
+exten =&gt; s,1,Set(CALLERID(num)=9${CALLERID(num)})
+</code>
+And proceed with your normal call routing logic.  Change the preceding digit to whatever matches your system.  If you have several extensions this is going to be used with, you could benefit from using a global variable for the leading digit.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/01/30/share-files-list-in-dropbox-public-folder/">Share List of Files in DropBox Public Folder</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-01-30T03:45:53-06:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>3:45 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For Windows DropBox users. Here is a simple way to share list of links for your Public folder. This script doesn&rsquo;t show files in sub-directories.</p>
+
+<ol>
+<li>Create a makefilelist.bat file with script to list all files in directory.</li>
+<li>Use Scheduled Tasks to run the .bat file Daily or Weekly, etc as needed; depending on how often you update files in DropBox Public.</li>
+<li>Share the list file with &ldquo;Copy Public Link&rdquo;.</li>
+<li>Open Public Link in a browser. You know have a list of all public files that is up-to-date.</li>
+</ol>
+
+
+<p>You can see an example and download the makefilelist.bat file here:
+<a href="http://dl.dropbox.com/u/4355901/index.html">http://dl.dropbox.com/u/4355901/index.html</a></p>
+
+<p>GitHub:
+<a href="http://github.com/drale/dropboxlistpublic/"> http://github.com/drale/dropboxlistpublic/</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/3">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/index.html">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/">Using Smart to Monitor Hard Drive Health</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/">CrashplanDesktop on Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/06/disable-networkmanager-in-centos-6/">Disable NetworkManager in CentOS 6</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/22/centos-6-kvm-installation/">CentOS 6 KVM Installation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/11/mikrotik-winbox-on-fedora-20/">Mikrotik Winbox on Fedora 20</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/105001737019747914994?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jon Moore -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

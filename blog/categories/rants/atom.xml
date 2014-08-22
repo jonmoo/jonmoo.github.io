@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rants | Captain's Log]]></title>
+  <link href="http://jonmoo.github.io/blog/categories/rants/atom.xml" rel="self"/>
+  <link href="http://jonmoo.github.io/"/>
+  <updated>2014-08-22T11:47:21-05:00</updated>
+  <id>http://jonmoo.github.io/</id>
+  <author>
+    <name><![CDATA[Jon Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Why Use ZFS With FreeNAS?]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/03/08/why-use-zfs-with-freenas/"/>
+    <updated>2010-03-08T21:43:29-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/03/08/why-use-zfs-with-freenas</id>
+    <content type="html"><![CDATA[<p>I recently started using FreeNAS again after exploring other options that existed, such as openfiler, and now that I&rsquo;ve returned, ZFS seems to be the cool thing to do.  After reading, watching videos and playing with ZFS I&rsquo;m sold on all the features it offers.  However, I must ask, is there a compelling reason to use ZFS over UFS for a single disk?  I&rsquo;d really like to see some comments on this.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Simple Rules to Keep You Smart With Email]]></title>
+    <link href="http://jonmoo.github.io/blog/2009/05/06/simple-rules-to-keep-you-smart-with-email/"/>
+    <updated>2009-05-06T22:15:48-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2009/05/06/simple-rules-to-keep-you-smart-with-email</id>
+    <content type="html"><![CDATA[<p>When using email, you should always keep the following rules suggestions in mind.  Most of these apply to mailing lists, but could just as easily make any email communication (and maybe even instant messaging) better.</p>
+
+<p>First, don&rsquo;t top post.  Not only is top posting counter-productive it is annoying.  Also, if the person before you sucks at life, don&rsquo;t follow with it.  Remove everything but the relevant parts, and post under that.  It makes life better for everyone.</p>
+
+<p>Along with the last one, don&rsquo;t include unnecessary posts in your reply.  More than likely, most people will choose not to follow the first suggestion, so lets alteast remove the parts of the message that are unneeded.  If you&rsquo;re reply to a long message, break it apart.  Put your replies inline, so others can better read them..</p>
+
+<p>Keep the signature short.  If you feel you must include a 12 line signature complete with pictures, color and blink tags, only do so once.  A simple sig is great.  A simple sig 24 times is annoying.  Don&rsquo;t do it.  Any mailer worth using allows you to configure when to add a sig, so don&rsquo;t add one on replies.</p>
+
+<p>Stay on topic.  If the current thread has sparked a new topic, start it elsewhere.  Threads and topics enjoy having an exclusive relationship, so keep it that way.  If you&rsquo;re changing the thread, atleast warn people (<em>New Thread Topic (WAS: old thread)</em>).</p>
+
+<p>That&rsquo;s all for now.  (actually, that&rsquo;s just the 4 things that annoyed me while checking my mail tonight)  I&rsquo;ll expand as more annoying things come to light.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why You Shouldn't Abuse a Technology..]]></title>
+    <link href="http://jonmoo.github.io/blog/2009/01/03/why-you-shouldnt-abuse-a-technology/"/>
+    <updated>2009-01-03T21:29:09-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2009/01/03/why-you-shouldnt-abuse-a-technology</id>
+    <content type="html"><![CDATA[<p>I was reading <a href="http://lifehacker.com/5122848/hard-lessons-in-the-importance-of-backups-journalspace-wiped-out">this</a> <a href="http://journalspace.com/this_is_the_way_the_world_ends/not_with_a_bang_but_a_whimper.html">story</a> on <a href="http://lifehacker.com">lifehacker</a> today and just wanted to drop my comments on the subject.</p>
+
+<p>Quite often, I&rsquo;ve had this conversation with people..</p>
+
+<blockquote>**Me: **What&#8217;s your backup scheme?
+**Them:** Oh, we have RAID.
+**Me:** Nice.  So what&#8217;s your backup scheme?</blockquote>
+
+
+<p>THe problem with is this, if you havn&rsquo;t figured it out yet&hellip; RAID is NOT a method for backing up data.  Now, sure it is useful for protecting data (in some forms) or speed up access to data (in other forms) but it is not, in any way, a method for protecting data.</p>
+
+<p>If nothing else, the journalspace incident proves this.  They were using RAID for backups.  Well, their RAID did exactly what RAID is meant to do.  Protect the data on the drive.  In their case, the data on the drive was the problem.  Having the mirror simply copied all the <em>bad data</em> across their drives.</p>
+
+<p>During this post, I&rsquo;ve been trying to think of a funny, sarcastic, or otherwise memoriable way of saying this, but I&rsquo;ve come up blank, so I&rsquo;ll just say it&hellip; <strong>Having a RAID array IS NOT a backup!</strong> Taking this furthur, you should never trust one form of technology to fill the role of another.</p>
+
+<p>The next time you&rsquo;re asked to implement a backup stragety, remember RAID is not your answer.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Every Administrator Needs Two Accounts..]]></title>
+    <link href="http://jonmoo.github.io/blog/2008/12/31/every-administrator-needs-two-accounts/"/>
+    <updated>2008-12-31T22:32:33-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2008/12/31/every-administrator-needs-two-accounts</id>
+    <content type="html"><![CDATA[<p>I assume you&rsquo;ve had your hands on at least one set of administrative credentials in your life.  I&rsquo;d also make the assumption that you&rsquo;ve used that account as your <em>everyday account</em>.  You know, the one we use to check mail, surf the web, update facebook, download porn&hellip; you know, that kind of stuff.</p>
+
+<p>That&rsquo;s a <strong>bad</strong> idea.</p>
+
+<p>Why, you might ask.  Doing so, opens yourself up for quite a lot of trouble.</p>
+
+<p>Time to take a step back&hellip;. Let&rsquo;s imagine for a moment that you&rsquo;re just another user.  What kind of access would you have on the network?  Hopefully you&rsquo;ve just said &lsquo;as little as possible&rsquo; or &lsquo;only what you need&rsquo; or similar.  Well, why is that?  Security.  The idea of least access says that I can do only what I need to do to complete my job.</p>
+
+<p><strong>Whoa! But I&rsquo;m the admin!</strong> I <em>need</em> access to everything!</p>
+
+<p>This may be true, but probably not.  Think about your average day.  What do you really do?  Occasionally you install some software, create user accounts, update systems&hellip; the list can go on.  Now, let&rsquo;s really think about that&hellip; How often do those tasks happen and where do you perform them.  Know that you&rsquo;ve answered those questions, let&rsquo;s move on.</p>
+
+<p>Everyone on your network should have a user account.  That is, a limited account with least access to the resources they need.  For an administrator, this means you have an account with very limited access to install software, run updates, make system changes and the like.  Just like everyone else.  This is the account you work with daily.  You log in, surf the web, read the news, send email, check blogs, etc&hellip; all that work stuff.</p>
+
+<p><strong>BUT WAIT</strong></p>
+
+<p>You also create an account for yourself with administrative rights.  This account, is used whenever you need to perform an administrative task.</p>
+
+<p>Have this account separate account means that any time you want to do something that requires administrative access you MUST think &ldquo;Do I really want to do this&rdquo;?  I bet you find yourself saying &ldquo;no, not really&rdquo; quite a lot after this.  Separate accounts also gives you a nice way of monitoring changes on your network.  By having separate logins, you can see when (and who) is making administrative changes on your network.</p>
+
+<p>I&rsquo;m tired..</p>
+]]></content>
+  </entry>
+  
+</feed>

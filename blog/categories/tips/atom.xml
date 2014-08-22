@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tips | Captain's Log]]></title>
+  <link href="http://jonmoo.github.io/blog/categories/tips/atom.xml" rel="self"/>
+  <link href="http://jonmoo.github.io/"/>
+  <updated>2014-08-22T11:47:21-05:00</updated>
+  <id>http://jonmoo.github.io/</id>
+  <author>
+    <name><![CDATA[Jon Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Disable NetworkManager in CentOS 6]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/05/06/disable-networkmanager-in-centos-6/"/>
+    <updated>2014-05-06T07:26:25-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/05/06/disable-networkmanager-in-centos-6</id>
+    <content type="html"><![CDATA[<p>Stop Network Manager Service</p>
+
+<pre><code># service NetworkManager stop
+</code></pre>
+
+<p>Disable NetworkManager on boot</p>
+
+<pre><code># chkconfig NetworkManager off
+</code></pre>
+
+<p>Enable network service</p>
+
+<pre><code># chkconfig network on
+</code></pre>
+
+<p>Start network service</p>
+
+<pre><code># service network start
+</code></pre>
+
+<p>Now, use configuration files in <code>/etc/sysconfig/network-scripts</code> to configure your network interfaces.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Delete Messages by Date With Mutt]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/02/12/delete-messages-by-date-with-mutt/"/>
+    <updated>2014-02-12T13:13:50-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/02/12/delete-messages-by-date-with-mutt</id>
+    <content type="html"><![CDATA[<p>It is simple enough with Mutt to delete emails based on age. I often use this when cleaning out old mailboxes for customers.</p>
+
+<p><code>D~d&gt;_n_d</code></p>
+
+<p>Replace <em>n</em> with the age of emails you wish to delete. 60d = Greater than 60 days and so on.  This is typed when you have a mailbox open with Mutt.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LVM Snapshots Quickie]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/01/25/lvm-snapshots-quickie/"/>
+    <updated>2014-01-25T08:52:45-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/01/25/lvm-snapshots-quickie</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>Create snapshot</p>
+
+<p>lvcreate &ndash;size 1G &ndash;snapshot &ndash;name snap /dev/vg0/lvol1</p></li>
+<li><p>Remove snapshot</p>
+
+<p>lvremove /dev/vg0/snap</p></li>
+</ul>
+
+
+<p>After creating the snapshot, can use <code>pvs</code> and <code>lvdisplay</code> to show status. Mount the snapshot the same as any other logical volume. If the snapshot becomes full, it is automatically disabled.</p>
+
+<p>References:</p>
+
+<ul>
+<li><p><a href="http://www.tldp.org/HOWTO/LVM-HOWTO/snapshots_backup.html">Taking a Backup Using Snapshots</a></p></li>
+<li><p><a href="http://www.centos.org/docs/5/html/Cluster_Logical_Volume_Manager/snapshot_command.html">CentOS Cluster Logical Volume Manager</a></p></li>
+</ul>
+
+
+<p>It&rsquo;s important to read the man page or other local help documents before running these commands. The documentation referenced doesn&rsquo;t do a great job of explaining what&rsquo;s going on.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CentOS Network Configuration]]></title>
+    <link href="http://jonmoo.github.io/blog/2012/10/23/289/"/>
+    <updated>2012-10-23T10:35:01-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2012/10/23/289</id>
+    <content type="html"><![CDATA[<p>This post is mostly being made for me personal notes, but maybe it will assist others at some point. I&rsquo;m always forgetting the various configuration files involved with setting up networking on a CentOS host. I have decided to document the process I go through each time to help me remember in the future. Most of this information comes from various forums, CentOS documentation and the man pages. If you see something wrong, or a better way to do this, please comment.</p>
+
+<p><strong>/etc/sysconfig/network-scripts/ifcfg-eth0</strong>
+Device specific information:</p>
+
+<p><em>For DHCP</em>
+<code>DEVICE=eth0
+BOOTPROTO=dhcp
+ONBOOT=yes</code></p>
+
+<p><em>For fixed / static address</em>
+<code>DEVICE=eth0
+BOOTPROTO=none
+ONBOOT=yes
+NETWORK=172.24.1.0
+NETMASK=255.255.255.0
+IPADDR=172.24.1.10</code></p>
+
+<p><strong>/etc/sysconfig/network</strong>
+System wide networking information:</p>
+
+<p><code>NETWORKING=yes
+HOSTNAME=server.example.com
+GATEWAY=172.24.1.1</code></p>
+
+<p><strong>/etc/resolv.conf</strong>
+DNS server information</p>
+
+<p><code>nameserver 8.8.8.8
+nameserver 8.8.4.4</code></p>
+
+<p>After all is set, <code>$service network restart</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Locating PostgreSQL Data Directory]]></title>
+    <link href="http://jonmoo.github.io/blog/2011/12/30/locating-postgresql-data-directory/"/>
+    <updated>2011-12-30T13:55:23-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2011/12/30/locating-postgresql-data-directory</id>
+    <content type="html"><![CDATA[<p>Use a simple psql query to find the location of the data directory
+`postgres=# SHOW data_directory;</p>
+
+<h2>data_directory</h2>
+
+<p>/var/lib/postgresql/8.4/main
+(1 row)`</p>
+
+<p>Or
+`
+postgres=# select setting from pg_settings where name = &lsquo;data_directory&rsquo;;</p>
+
+<pre><code>       setting
+</code></pre>
+
+<hr />
+
+<p> /var/lib/postgresql/8.4/main
+(1 row)`</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Notes | Captain's Log]]></title>
+  <link href="http://jonmoo.github.io/blog/categories/notes/atom.xml" rel="self"/>
+  <link href="http://jonmoo.github.io/"/>
+  <updated>2014-08-22T11:47:21-05:00</updated>
+  <id>http://jonmoo.github.io/</id>
+  <author>
+    <name><![CDATA[Jon Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Smart to Monitor Hard Drive Health]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/"/>
+    <updated>2014-08-11T18:17:17-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/08/11/using-smart-to-monitor-hard-drive-health</id>
+    <content type="html"><![CDATA[<p>Notes on using smartmontools on Ubuntu.</p>
+
+<p><strong>Installation</strong>
+Install the package smartmontools</p>
+
+<p><strong>Setup</strong>
+smartctl runs without any configuration.
+<code>bash
+$sudo smartctl -i /dev/$device
+</code></p>
+
+<p><strong>Enabling S.M.A.R.T features</strong>
+<code>bash
+$sudo smartctl -s on -o on -S on /dev/sda
+</code>
+<em><strong>-s on</strong> turns on support or does nothing if it&rsquo;s enabled, <strong>-o on</strong> turns on offline data collection, and <strong>-S on</strong> enables autosave of device vendor-specific attributes</em></p>
+
+<p><strong>Check overall health</strong>
+<code>bash
+$sudo smartctl -H $device
+</code></p>
+
+<p><strong>Run short test</strong>
+<code>bash
+$sudo smartctl -t short $device
+</code></p>
+
+<p><strong>Run long test</strong>
+<code>bash
+$sudo smartctl -t long $device
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CrashplanDesktop on Ubuntu 14.04]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/"/>
+    <updated>2014-07-31T19:15:11-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04</id>
+    <content type="html"><![CDATA[<p>I recently tried to install Crashplan 3 on my Ubuntu 14.04 desktop.  All went well, up until I attempted to start CrashplanDesktop.  No obvious errors and nothing useful to me in the ui_output.log file.</p>
+
+<p>After a short bit of searching, I found <a href="http://geekphreek.com/crashplan-3-5-3-on-xubuntu-14-04-crash-fix/">this blog post</a> with some simple instructions found in the Crashplan FAQ.  After following the instructions, CrashplanDesktop opened without issue.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CentOS 6 KVM Installation]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/04/22/centos-6-kvm-installation/"/>
+    <updated>2014-04-22T15:20:11-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/04/22/centos-6-kvm-installation</id>
+    <content type="html"><![CDATA[<h3>Install required KVM pacakages</h3>
+
+<p>In order to use KVM several packages must first be installed. These can easily be installed with the correct yum group.</p>
+
+<pre><code class="bash">$ yum groupinstall "Virtualization Tools" "Virtualization Platform"
+</code></pre>
+
+<h3>Start the libvird service</h3>
+
+<p>The following <code>chkconfig</code> command will enable the libvirtd daemon at boot, and the <code>service</code> command will start the daemon immediately.</p>
+
+<pre><code class="bash">$ chkconfig libvirtd on
+$ service libvirtd start
+</code></pre>
+
+<p>To verify libvirtd has started we can use the virsh command
+<code>bash
+$ virsh -c qemu:///system list
+</code></p>
+
+<p><em>On more than on occasion, I&rsquo;ve seen error: Cannot read CA certificate &hellip; instead of the expected output. If this happens, look closely at the command. The mistake I make is leaving out a <code>/</code> in the URI.</em></p>
+
+<p>At this point, KVM is installed and working.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mikrotik Winbox on Fedora 20]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/03/11/mikrotik-winbox-on-fedora-20/"/>
+    <updated>2014-03-11T09:00:33-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/03/11/mikrotik-winbox-on-fedora-20</id>
+    <content type="html"><![CDATA[<p>Just a short note on what is needed to get <a href="http://wiki.mikrotik.com/wiki/Winbox">winbox</a> running on Fedora 20 with wine.  This will most likely be true for other distributions as well.</p>
+
+<p>Install wine and some related packages.<br/>
+<code>#sudo yum install wine wine-core wine-wow wine-desktop wine-mono mingw32-wine-gecko</code></p>
+
+<p>Run winbox with wine
+<code>#wine winbox.exe</code></p>
+
+<p>I also followed the advice from <a href="http://askubuntu.com/questions/219791/improve-gui-appearance-of-wine-applications">this askubuntu thread</a> to make wine look a little better.  Overall it worked out pretty well.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubiquiti UniFi Controller Address From Dhcp]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/02/03/312/"/>
+    <updated>2014-02-03T21:04:16-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/02/03/312</id>
+    <content type="html"><![CDATA[<p>During a recent Ubiquiti UniFi deployment, it was necessary to have the UniFi controller running on a different network then what the access points where on.  Instead of manually having to adopt each access point, the Ubiquiti wiki had a nice FAQ entry on setting up DHCP options to allow the access points to locate the controller.  The following example comes from the <a href="http://community.ubnt.com/t5/UniFi-Controller-Installation/UniFi-Layer-3-methods-for-UAP-adoption-and-management/ta-p/455643#Section_4">Ubiquiti</a> knowledge base and is only slightly edited.</p>
+
+<p>Both sections need to be added to <code>dhcpd.conf</code>.</p>
+
+<p>option space ubnt;
+option ubnt.unifi-address code 1 = ip-address;</p>
+
+<p><code>class "ubnt" {
+match if substring (option vendor-class-identifier, 0, 4) = "ubnt";
+option vendor-class-identifier "ubnt";
+vendor-option-space ubnt;
+}</code>
+<code>
+subnet 198.51.100.0 netmask 255.255.255.0 {
+option routers 198.51.100.1;
+option subnet-mask 255.255.255.0;
+option domain-name "unifi.local";
+option domain-name-servers 203.0.113.10,</code>203.0.113.20<code>;
+**option ubnt.unifi-address_ 192.0.2.10_;**
+range 198.51.100.100 198.51.100.199;
+}</code></p>
+
+<p>The bold line is where the IP address of your UniFi controller needs to be set.  After this, restart dhcpd and plug in your access points.  After a short wait, they should be ready to adopt.</p>
+]]></content>
+  </entry>
+  
+</feed>

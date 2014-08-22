@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Open Source Storage Server - Captain's Log</title>
+  <meta name="author" content="Jon Moore">
+
+  
+  <meta name="description" content="This is not going to be a full review, but more a general take on things. Since moving from VMware Server to ESXi to host my virtual machines, I& &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Captain's Log" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Captain's Log</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jonmoo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Open Source Storage Server</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-10-22T21:29:28-05:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2009</span></span> <span class='time'>9:29 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is not going to be a full review, but more a general take on things.</p>
+
+<p>Since moving from VMware Server to ESXi to host my virtual machines, I&rsquo;ve been very interested in looking into some more of the advanced features of ESX and ESXi yet most of these require iSCSI.  I remember from a few years back using <a href="http://openfiler.com/">Openfiler</a> to do some simple samba file sharing, and remembered it supported iSCSI as one method of giving out storage.</p>
+
+<p>Now, I&rsquo;ve yet to use any of the features of ESX that require iSCSI, or even setup <a href="http://openfiler.com/">Openfiler</a> to export storage via iSCSI, but I have been using it for simple file sharing and must say I&rsquo;m quite impressed.</p>
+
+<p>Setup is a breeze, taking about 20 minutes on an older PC. Management is done almost entirely through a <a href="http://openfiler.com/products/screenshots/">web interface</a>, that is very easy to use.  Unlink many of the other appliance packages out there, the web interface is very simple and straight forward.  Very much impressed with that.</p>
+
+<p>Over the next few months I&rsquo;ll be exploring <a href="http://openfiler.com/">Openfiler</a> much more, and hopefully getting into some of it&rsquo;s more advanced features including interface bonding, md devices and clustering.  I plan to keep updating as things more along.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jonmoo</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-10-22T21:29:28-05:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2009</span></span> <span class='time'>9:29 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/other/'>other</a>, <a class='category' href='/blog/categories/projects/'>projects</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server/" data-via="" data-counturl="http://jonmoo.github.io/blog/2009/10/22/open-source-storage-server/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/10/21/installing-dropbox-on-ubuntu-and-others/" title="Previous Post: Installing Dropbox on Ubuntu (and others)">&laquo; Installing Dropbox on Ubuntu (and others)</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/10/24/find-text-and-findreplace-easier-than-you-think-in-linux/" title="Next Post: Find Text and Find/Replace Easier Than You Think in Linux">Find Text and Find/Replace Easier Than You Think in Linux &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/">Using Smart to Monitor Hard Drive Health</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/">CrashplanDesktop on Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/06/disable-networkmanager-in-centos-6/">Disable NetworkManager in CentOS 6</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/22/centos-6-kvm-installation/">CentOS 6 KVM Installation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/11/mikrotik-winbox-on-fedora-20/">Mikrotik Winbox on Fedora 20</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/105001737019747914994?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jon Moore -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

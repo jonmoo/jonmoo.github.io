@@ -1,1 +1,606 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Captain's Log</title>
+  <meta name="author" content="Jon Moore">
+
+  
+  <meta name="description" content="Notes on using smartmontools on Ubuntu. Installation
+Install the package smartmontools Setup
+smartctl runs without any configuration. 1
+$sudo &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jonmoo.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Captain's Log" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Captain's Log</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jonmoo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/">Using Smart to Monitor Hard Drive Health</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-11T18:17:17-05:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:17 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Notes on using smartmontools on Ubuntu.</p>
+
+<p><strong>Installation</strong>
+Install the package smartmontools</p>
+
+<p><strong>Setup</strong>
+smartctl runs without any configuration.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -i /dev/<span class="nv">$device</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Enabling S.M.A.R.T features</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -s on -o on -S on /dev/sda
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em><strong>-s on</strong> turns on support or does nothing if it&rsquo;s enabled, <strong>-o on</strong> turns on offline data collection, and <strong>-S on</strong> enables autosave of device vendor-specific attributes</em></p>
+
+<p><strong>Check overall health</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -H <span class="nv">$device</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Run short test</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -t short <span class="nv">$device</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Run long test</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -t long <span class="nv">$device</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/">CrashplanDesktop on Ubuntu 14.04</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-07-31T19:15:11-05:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>7:15 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently tried to install Crashplan 3 on my Ubuntu 14.04 desktop.  All went well, up until I attempted to start CrashplanDesktop.  No obvious errors and nothing useful to me in the ui_output.log file.</p>
+
+<p>After a short bit of searching, I found <a href="http://geekphreek.com/crashplan-3-5-3-on-xubuntu-14-04-crash-fix/">this blog post</a> with some simple instructions found in the Crashplan FAQ.  After following the instructions, CrashplanDesktop opened without issue.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/06/disable-networkmanager-in-centos-6/">Disable NetworkManager in CentOS 6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-06T07:26:25-05:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:26 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Stop Network Manager Service</p>
+
+<pre><code># service NetworkManager stop
+</code></pre>
+
+<p>Disable NetworkManager on boot</p>
+
+<pre><code># chkconfig NetworkManager off
+</code></pre>
+
+<p>Enable network service</p>
+
+<pre><code># chkconfig network on
+</code></pre>
+
+<p>Start network service</p>
+
+<pre><code># service network start
+</code></pre>
+
+<p>Now, use configuration files in <code>/etc/sysconfig/network-scripts</code> to configure your network interfaces.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/22/centos-6-kvm-installation/">CentOS 6 KVM Installation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-04-22T15:20:11-05:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>3:20 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Install required KVM pacakages</h3>
+
+<p>In order to use KVM several packages must first be installed. These can easily be installed with the correct yum group.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>yum groupinstall <span class="s2">&quot;Virtualization Tools&quot;</span> <span class="s2">&quot;Virtualization Platform&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Start the libvird service</h3>
+
+<p>The following <code>chkconfig</code> command will enable the libvirtd daemon at boot, and the <code>service</code> command will start the daemon immediately.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>chkconfig libvirtd on
+</span><span class='line'><span class="nv">$ </span>service libvirtd start
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To verify libvirtd has started we can use the virsh command</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>virsh -c qemu:///system list
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>On more than on occasion, I&rsquo;ve seen error: Cannot read CA certificate &hellip; instead of the expected output. If this happens, look closely at the command. The mistake I make is leaving out a <code>/</code> in the URI.</em></p>
+
+<p>At this point, KVM is installed and working.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/11/mikrotik-winbox-on-fedora-20/">Mikrotik Winbox on Fedora 20</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-03-11T09:00:33-05:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Just a short note on what is needed to get <a href="http://wiki.mikrotik.com/wiki/Winbox">winbox</a> running on Fedora 20 with wine.  This will most likely be true for other distributions as well.</p>
+
+<p>Install wine and some related packages.<br/>
+<code>#sudo yum install wine wine-core wine-wow wine-desktop wine-mono mingw32-wine-gecko</code></p>
+
+<p>Run winbox with wine
+<code>#wine winbox.exe</code></p>
+
+<p>I also followed the advice from <a href="http://askubuntu.com/questions/219791/improve-gui-appearance-of-wine-applications">this askubuntu thread</a> to make wine look a little better.  Overall it worked out pretty well.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/12/delete-messages-by-date-with-mutt/">Delete Messages by Date With Mutt</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-02-12T13:13:50-06:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>1:13 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It is simple enough with Mutt to delete emails based on age. I often use this when cleaning out old mailboxes for customers.</p>
+
+<p><code>D~d&gt;_n_d</code></p>
+
+<p>Replace <em>n</em> with the age of emails you wish to delete. 60d = Greater than 60 days and so on.  This is typed when you have a mailbox open with Mutt.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/04/installing-xenserver-tools-in-ubuntu/">Installing XenServer Tools in Ubuntu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-02-04T08:11:43-06:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:11 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have been testing XenServer and have been required to install the XenServer Tools package on a virtual machine running Ubuntu 12.04.  The process is most likely the same for newer versions as well as other Debian based distributions.</p>
+
+<p>The first step was the connect the xs-tools.iso image to the virtual drive of the VM.  This can be done a few ways, but the easiest is to just select Install XenServer Tools from the virtual machine menu.</p>
+
+<p>Once connected to the vm, the drive needs to be mounted.</p>
+
+<p><code>
+mount /dev/xvdd /mnt
+</code></p>
+
+<p>Now, all the XenServer Tools packages for Linux can be found under <code>/mnt/Linux</code>.  Install the package for your architecture using dpkg.</p>
+
+<p><code>dpkg -i xe-guest-utilties_6.2.0.-1120_amd64.deb</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/03/312/">Ubiquiti UniFi Controller Address From Dhcp</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-02-03T21:04:16-06:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>9:04 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>During a recent Ubiquiti UniFi deployment, it was necessary to have the UniFi controller running on a different network then what the access points where on.  Instead of manually having to adopt each access point, the Ubiquiti wiki had a nice FAQ entry on setting up DHCP options to allow the access points to locate the controller.  The following example comes from the <a href="http://community.ubnt.com/t5/UniFi-Controller-Installation/UniFi-Layer-3-methods-for-UAP-adoption-and-management/ta-p/455643#Section_4">Ubiquiti</a> knowledge base and is only slightly edited.</p>
+
+<p>Both sections need to be added to <code>dhcpd.conf</code>.</p>
+
+<p>option space ubnt;
+option ubnt.unifi-address code 1 = ip-address;</p>
+
+<p><code>class "ubnt" {
+match if substring (option vendor-class-identifier, 0, 4) = "ubnt";
+option vendor-class-identifier "ubnt";
+vendor-option-space ubnt;
+}</code>
+<code>
+subnet 198.51.100.0 netmask 255.255.255.0 {
+option routers 198.51.100.1;
+option subnet-mask 255.255.255.0;
+option domain-name "unifi.local";
+option domain-name-servers 203.0.113.10,</code>203.0.113.20<code>;
+**option ubnt.unifi-address_ 192.0.2.10_;**
+range 198.51.100.100 198.51.100.199;
+}</code></p>
+
+<p>The bold line is where the IP address of your UniFi controller needs to be set.  After this, restart dhcpd and plug in your access points.  After a short wait, they should be ready to adopt.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/25/lvm-snapshots-quickie/">LVM Snapshots Quickie</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-01-25T08:52:45-06:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:52 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><p>Create snapshot</p>
+
+<p>lvcreate &ndash;size 1G &ndash;snapshot &ndash;name snap /dev/vg0/lvol1</p></li>
+<li><p>Remove snapshot</p>
+
+<p>lvremove /dev/vg0/snap</p></li>
+</ul>
+
+
+<p>After creating the snapshot, can use <code>pvs</code> and <code>lvdisplay</code> to show status. Mount the snapshot the same as any other logical volume. If the snapshot becomes full, it is automatically disabled.</p>
+
+<p>References:</p>
+
+<ul>
+<li><p><a href="http://www.tldp.org/HOWTO/LVM-HOWTO/snapshots_backup.html">Taking a Backup Using Snapshots</a></p></li>
+<li><p><a href="http://www.centos.org/docs/5/html/Cluster_Logical_Volume_Manager/snapshot_command.html">CentOS Cluster Logical Volume Manager</a></p></li>
+</ul>
+
+
+<p>It&rsquo;s important to read the man page or other local help documents before running these commands. The documentation referenced doesn&rsquo;t do a great job of explaining what&rsquo;s going on.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/30/mikrotik-routerboards/">Mikrotik Routerboards</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-10-30T11:20:05-05:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>11:20 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have had my Mikrotik RB751G-2HnD in service for a few months now, and it&rsquo;s been rocking along great.  The cheap price had me a bit skeptical at first, but after seeing some of the reviews and the community around their devices, I was pretty sold.  I purchased the first one to replace a Linksys E4500 wireless router after the Cisco cloud connect upgrade.</p>
+
+<p>I am using the device as a simple home gateway router for my network, with many of the more advanced features disabled.  I do have IPv6 enabled, using a tunnel provided by Hurricane Electric using their tunnel broker service, which has been very stable.  The wireless works great with coverage area expanding beyond what the Linksys provided.</p>
+
+<p>The device supports various VPN connections, but I have yet to test any of this.  Other notable features include a wireless hotspot manager, VLANs and several routing protocols including BGP.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/">Using Smart to Monitor Hard Drive Health</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/">CrashplanDesktop on Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/06/disable-networkmanager-in-centos-6/">Disable NetworkManager in CentOS 6</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/22/centos-6-kvm-installation/">CentOS 6 KVM Installation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/11/mikrotik-winbox-on-fedora-20/">Mikrotik Winbox on Fedora 20</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/105001737019747914994?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jon Moore -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Captain's Log]]></title>
+  <link href="http://jonmoo.github.io/atom.xml" rel="self"/>
+  <link href="http://jonmoo.github.io/"/>
+  <updated>2014-08-22T11:47:21-05:00</updated>
+  <id>http://jonmoo.github.io/</id>
+  <author>
+    <name><![CDATA[Jon Moore]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Smart to Monitor Hard Drive Health]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/08/11/using-smart-to-monitor-hard-drive-health/"/>
+    <updated>2014-08-11T18:17:17-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/08/11/using-smart-to-monitor-hard-drive-health</id>
+    <content type="html"><![CDATA[<p>Notes on using smartmontools on Ubuntu.</p>
+
+<p><strong>Installation</strong>
+Install the package smartmontools</p>
+
+<p><strong>Setup</strong>
+smartctl runs without any configuration.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -i /dev/<span class="nv">$device</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Enabling S.M.A.R.T features</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -s on -o on -S on /dev/sda
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em><strong>-s on</strong> turns on support or does nothing if it&rsquo;s enabled, <strong>-o on</strong> turns on offline data collection, and <strong>-S on</strong> enables autosave of device vendor-specific attributes</em></p>
+
+<p><strong>Check overall health</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -H <span class="nv">$device</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Run short test</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -t short <span class="nv">$device</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Run long test</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$sudo</span> smartctl -t long <span class="nv">$device</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CrashplanDesktop on Ubuntu 14.04]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04/"/>
+    <updated>2014-07-31T19:15:11-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/07/31/crashplandesktop-on-ubuntu-14-04</id>
+    <content type="html"><![CDATA[<p>I recently tried to install Crashplan 3 on my Ubuntu 14.04 desktop.  All went well, up until I attempted to start CrashplanDesktop.  No obvious errors and nothing useful to me in the ui_output.log file.</p>
+
+<p>After a short bit of searching, I found <a href="http://geekphreek.com/crashplan-3-5-3-on-xubuntu-14-04-crash-fix/">this blog post</a> with some simple instructions found in the Crashplan FAQ.  After following the instructions, CrashplanDesktop opened without issue.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disable NetworkManager in CentOS 6]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/05/06/disable-networkmanager-in-centos-6/"/>
+    <updated>2014-05-06T07:26:25-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/05/06/disable-networkmanager-in-centos-6</id>
+    <content type="html"><![CDATA[<p>Stop Network Manager Service</p>
+
+<pre><code># service NetworkManager stop
+</code></pre>
+
+<p>Disable NetworkManager on boot</p>
+
+<pre><code># chkconfig NetworkManager off
+</code></pre>
+
+<p>Enable network service</p>
+
+<pre><code># chkconfig network on
+</code></pre>
+
+<p>Start network service</p>
+
+<pre><code># service network start
+</code></pre>
+
+<p>Now, use configuration files in <code>/etc/sysconfig/network-scripts</code> to configure your network interfaces.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CentOS 6 KVM Installation]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/04/22/centos-6-kvm-installation/"/>
+    <updated>2014-04-22T15:20:11-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/04/22/centos-6-kvm-installation</id>
+    <content type="html"><![CDATA[<h3>Install required KVM pacakages</h3>
+
+<p>In order to use KVM several packages must first be installed. These can easily be installed with the correct yum group.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>yum groupinstall <span class="s2">&quot;Virtualization Tools&quot;</span> <span class="s2">&quot;Virtualization Platform&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Start the libvird service</h3>
+
+<p>The following <code>chkconfig</code> command will enable the libvirtd daemon at boot, and the <code>service</code> command will start the daemon immediately.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>chkconfig libvirtd on
+</span><span class='line'><span class="nv">$ </span>service libvirtd start
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To verify libvirtd has started we can use the virsh command</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>virsh -c qemu:///system list
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>On more than on occasion, I&rsquo;ve seen error: Cannot read CA certificate &hellip; instead of the expected output. If this happens, look closely at the command. The mistake I make is leaving out a <code>/</code> in the URI.</em></p>
+
+<p>At this point, KVM is installed and working.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mikrotik Winbox on Fedora 20]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/03/11/mikrotik-winbox-on-fedora-20/"/>
+    <updated>2014-03-11T09:00:33-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/03/11/mikrotik-winbox-on-fedora-20</id>
+    <content type="html"><![CDATA[<p>Just a short note on what is needed to get <a href="http://wiki.mikrotik.com/wiki/Winbox">winbox</a> running on Fedora 20 with wine.  This will most likely be true for other distributions as well.</p>
+
+<p>Install wine and some related packages.<br/>
+<code>#sudo yum install wine wine-core wine-wow wine-desktop wine-mono mingw32-wine-gecko</code></p>
+
+<p>Run winbox with wine
+<code>#wine winbox.exe</code></p>
+
+<p>I also followed the advice from <a href="http://askubuntu.com/questions/219791/improve-gui-appearance-of-wine-applications">this askubuntu thread</a> to make wine look a little better.  Overall it worked out pretty well.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Delete Messages by Date With Mutt]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/02/12/delete-messages-by-date-with-mutt/"/>
+    <updated>2014-02-12T13:13:50-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/02/12/delete-messages-by-date-with-mutt</id>
+    <content type="html"><![CDATA[<p>It is simple enough with Mutt to delete emails based on age. I often use this when cleaning out old mailboxes for customers.</p>
+
+<p><code>D~d&gt;_n_d</code></p>
+
+<p>Replace <em>n</em> with the age of emails you wish to delete. 60d = Greater than 60 days and so on.  This is typed when you have a mailbox open with Mutt.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Installing XenServer Tools in Ubuntu]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/02/04/installing-xenserver-tools-in-ubuntu/"/>
+    <updated>2014-02-04T08:11:43-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/02/04/installing-xenserver-tools-in-ubuntu</id>
+    <content type="html"><![CDATA[<p>I have been testing XenServer and have been required to install the XenServer Tools package on a virtual machine running Ubuntu 12.04.  The process is most likely the same for newer versions as well as other Debian based distributions.</p>
+
+<p>The first step was the connect the xs-tools.iso image to the virtual drive of the VM.  This can be done a few ways, but the easiest is to just select Install XenServer Tools from the virtual machine menu.</p>
+
+<p>Once connected to the vm, the drive needs to be mounted.</p>
+
+<p><code>
+mount /dev/xvdd /mnt
+</code></p>
+
+<p>Now, all the XenServer Tools packages for Linux can be found under <code>/mnt/Linux</code>.  Install the package for your architecture using dpkg.</p>
+
+<p><code>dpkg -i xe-guest-utilties_6.2.0.-1120_amd64.deb</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubiquiti UniFi Controller Address From Dhcp]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/02/03/312/"/>
+    <updated>2014-02-03T21:04:16-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/02/03/312</id>
+    <content type="html"><![CDATA[<p>During a recent Ubiquiti UniFi deployment, it was necessary to have the UniFi controller running on a different network then what the access points where on.  Instead of manually having to adopt each access point, the Ubiquiti wiki had a nice FAQ entry on setting up DHCP options to allow the access points to locate the controller.  The following example comes from the <a href="http://community.ubnt.com/t5/UniFi-Controller-Installation/UniFi-Layer-3-methods-for-UAP-adoption-and-management/ta-p/455643#Section_4">Ubiquiti</a> knowledge base and is only slightly edited.</p>
+
+<p>Both sections need to be added to <code>dhcpd.conf</code>.</p>
+
+<p>option space ubnt;
+option ubnt.unifi-address code 1 = ip-address;</p>
+
+<p><code>class "ubnt" {
+match if substring (option vendor-class-identifier, 0, 4) = "ubnt";
+option vendor-class-identifier "ubnt";
+vendor-option-space ubnt;
+}</code>
+<code>
+subnet 198.51.100.0 netmask 255.255.255.0 {
+option routers 198.51.100.1;
+option subnet-mask 255.255.255.0;
+option domain-name "unifi.local";
+option domain-name-servers 203.0.113.10,</code>203.0.113.20<code>;
+**option ubnt.unifi-address_ 192.0.2.10_;**
+range 198.51.100.100 198.51.100.199;
+}</code></p>
+
+<p>The bold line is where the IP address of your UniFi controller needs to be set.  After this, restart dhcpd and plug in your access points.  After a short wait, they should be ready to adopt.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LVM Snapshots Quickie]]></title>
+    <link href="http://jonmoo.github.io/blog/2014/01/25/lvm-snapshots-quickie/"/>
+    <updated>2014-01-25T08:52:45-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2014/01/25/lvm-snapshots-quickie</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>Create snapshot</p>
+
+<p>lvcreate &ndash;size 1G &ndash;snapshot &ndash;name snap /dev/vg0/lvol1</p></li>
+<li><p>Remove snapshot</p>
+
+<p>lvremove /dev/vg0/snap</p></li>
+</ul>
+
+
+<p>After creating the snapshot, can use <code>pvs</code> and <code>lvdisplay</code> to show status. Mount the snapshot the same as any other logical volume. If the snapshot becomes full, it is automatically disabled.</p>
+
+<p>References:</p>
+
+<ul>
+<li><p><a href="http://www.tldp.org/HOWTO/LVM-HOWTO/snapshots_backup.html">Taking a Backup Using Snapshots</a></p></li>
+<li><p><a href="http://www.centos.org/docs/5/html/Cluster_Logical_Volume_Manager/snapshot_command.html">CentOS Cluster Logical Volume Manager</a></p></li>
+</ul>
+
+
+<p>It&rsquo;s important to read the man page or other local help documents before running these commands. The documentation referenced doesn&rsquo;t do a great job of explaining what&rsquo;s going on.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mikrotik Routerboards]]></title>
+    <link href="http://jonmoo.github.io/blog/2012/10/30/mikrotik-routerboards/"/>
+    <updated>2012-10-30T11:20:05-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2012/10/30/mikrotik-routerboards</id>
+    <content type="html"><![CDATA[<p>I have had my Mikrotik RB751G-2HnD in service for a few months now, and it&rsquo;s been rocking along great.  The cheap price had me a bit skeptical at first, but after seeing some of the reviews and the community around their devices, I was pretty sold.  I purchased the first one to replace a Linksys E4500 wireless router after the Cisco cloud connect upgrade.</p>
+
+<p>I am using the device as a simple home gateway router for my network, with many of the more advanced features disabled.  I do have IPv6 enabled, using a tunnel provided by Hurricane Electric using their tunnel broker service, which has been very stable.  The wireless works great with coverage area expanding beyond what the Linksys provided.</p>
+
+<p>The device supports various VPN connections, but I have yet to test any of this.  Other notable features include a wireless hotspot manager, VLANs and several routing protocols including BGP.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CentOS Network Configuration]]></title>
+    <link href="http://jonmoo.github.io/blog/2012/10/23/289/"/>
+    <updated>2012-10-23T10:35:01-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2012/10/23/289</id>
+    <content type="html"><![CDATA[<p>This post is mostly being made for me personal notes, but maybe it will assist others at some point. I&rsquo;m always forgetting the various configuration files involved with setting up networking on a CentOS host. I have decided to document the process I go through each time to help me remember in the future. Most of this information comes from various forums, CentOS documentation and the man pages. If you see something wrong, or a better way to do this, please comment.</p>
+
+<p><strong>/etc/sysconfig/network-scripts/ifcfg-eth0</strong>
+Device specific information:</p>
+
+<p><em>For DHCP</em>
+<code>DEVICE=eth0
+BOOTPROTO=dhcp
+ONBOOT=yes</code></p>
+
+<p><em>For fixed / static address</em>
+<code>DEVICE=eth0
+BOOTPROTO=none
+ONBOOT=yes
+NETWORK=172.24.1.0
+NETMASK=255.255.255.0
+IPADDR=172.24.1.10</code></p>
+
+<p><strong>/etc/sysconfig/network</strong>
+System wide networking information:</p>
+
+<p><code>NETWORKING=yes
+HOSTNAME=server.example.com
+GATEWAY=172.24.1.1</code></p>
+
+<p><strong>/etc/resolv.conf</strong>
+DNS server information</p>
+
+<p><code>nameserver 8.8.8.8
+nameserver 8.8.4.4</code></p>
+
+<p>After all is set, <code>$service network restart</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Locating PostgreSQL Data Directory]]></title>
+    <link href="http://jonmoo.github.io/blog/2011/12/30/locating-postgresql-data-directory/"/>
+    <updated>2011-12-30T13:55:23-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2011/12/30/locating-postgresql-data-directory</id>
+    <content type="html"><![CDATA[<p>Use a simple psql query to find the location of the data directory
+`postgres=# SHOW data_directory;</p>
+
+<h2>data_directory</h2>
+
+<p>/var/lib/postgresql/8.4/main
+(1 row)`</p>
+
+<p>Or
+`
+postgres=# select setting from pg_settings where name = &lsquo;data_directory&rsquo;;</p>
+
+<pre><code>       setting
+</code></pre>
+
+<hr />
+
+<p> /var/lib/postgresql/8.4/main
+(1 row)`</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Enable Thunderbird Global Search in Fedora]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/09/16/enabled-thunderbird-global-search-in-fedora/"/>
+    <updated>2010-09-16T14:38:35-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/09/16/enabled-thunderbird-global-search-in-fedora</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;ve just installed Thunderbird on Fedora 13, you&rsquo;ve probably noticed the Global Search bar is missing.  At least, this is one of the first things I noticed. After using Thunderbird 3.x for sometime on Windows I&rsquo;ve really come to love this feature.</p>
+
+<p>It seems the default configuration on Fedora doesn&rsquo;t enable this feature by default, however it is simple to get working.  Go to the Preferences menu, Advanced section and check &ldquo;Enable Global Search and Indexer&rdquo;.  After this, restart Thunderbird and it will begin indexing your mail.  After which, the Global Search should work as expected.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Moving /home to New Partition]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/07/19/moving-home-to-new-partition/"/>
+    <updated>2010-07-19T11:48:21-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/07/19/moving-home-to-new-partition</id>
+    <content type="html"><![CDATA[<p>If /home is just a folder under / and you have a reason to put this on it&rsquo;s own partition the process isn&rsquo;t that difficult.  Here is the steps I followed to do this.</p>
+
+<p>First, create the new partition on the drive.  I was using LVM, so I created a new logical volume, do whatever makes sense for your system here.</p>
+
+<p>Make a place for the new home partition to be mounted while we transfer files.</p>
+
+<pre><code>mkdir /mnt/newhome
+mount -t   /mnt/newhome
+</code></pre>
+
+<p>Move files from current /home to this new location.</p>
+
+<pre><code>cd /home
+cp -ax * /mnt/newhome
+</code></pre>
+
+<p>Once all the files have copied, remove the old home directory, and mount the new partition in its place.</p>
+
+<pre><code>rm -r /home
+mount  -t   /home
+</code></pre>
+
+<p>Edit /etc/fstab for the new partition, and you&rsquo;re done.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lock and Unlock Linux Accounts]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/04/22/lock-and-unlock-linux-accounts/"/>
+    <updated>2010-04-22T08:37:06-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/04/22/lock-and-unlock-linux-accounts</id>
+    <content type="html"><![CDATA[<p>Using <code>passwd</code> it is possible to quickly lock and unlock Linux accounts.</p>
+
+<p>To lock an account.</p>
+
+<pre><code>passwd -l &lt;code&gt;username&lt;/code&gt;
+</code></pre>
+
+<p>To unlock an account.</p>
+
+<pre><code>passwd -u &lt;code&gt;username&lt;/code&gt;
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Telnet to Test POP Server]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/04/21/using-telnet-to-test-pop-server/"/>
+    <updated>2010-04-21T09:52:28-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/04/21/using-telnet-to-test-pop-server</id>
+    <content type="html"><![CDATA[<p>Using telnet (or putty) it&rsquo;s possible to some simple tests against a POP server.  By no means exhaustive, it can give you insights in where to start troubleshooting.</p>
+
+<p>First, using telnet and open a connection the remote POP server</p>
+
+<pre><code>telnet mailserver 110
+</code></pre>
+
+<p>Where <code>mailserver</code> is the mail server you want to connect to.  Note that port <code>110</code> is the default port for POP, but could be different depending on your servers settings.</p>
+
+<p>Once connected, use <code>USER</code> and <code>PASS</code> to login.</p>
+
+<pre><code>[root@ms1 ~] # telnet localhost 110
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
++OK POP3 localhost v2001.78rh server ready
+USER &lt;code&gt;username&lt;/code&gt;
++OK User name accepted, password please
+PASS &lt;code&gt;password&lt;/code&gt;
++OK Mailbox open, 1 messages
+QUIT
++OK Sayonara
+Connection closed by foreign host.
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux IPv6 Neighbor Discovery]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/04/20/linux-ipv6-neighbor-discovery/"/>
+    <updated>2010-04-20T16:37:54-05:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/04/20/linux-ipv6-neighbor-discovery</id>
+    <content type="html"><![CDATA[<p>Using <code>ping6</code> and <code>ip neigh</code> it&rsquo;s possible to discover other IPv6 hosts on your local network using the link-local addresses.
+First, use ping6 to ping all hosts on the local network using the IPv6 link-local address</p>
+
+<pre><code>ping6 -c 2 -I eth0 ff02::1
+</code></pre>
+
+<p>Then, use <code>ip neigh</code> to show a list of IPv6 enable hosts on the local network</p>
+
+<pre><code>ip -f inet6 neigh
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why Use ZFS With FreeNAS?]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/03/08/why-use-zfs-with-freenas/"/>
+    <updated>2010-03-08T21:43:29-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/03/08/why-use-zfs-with-freenas</id>
+    <content type="html"><![CDATA[<p>I recently started using FreeNAS again after exploring other options that existed, such as openfiler, and now that I&rsquo;ve returned, ZFS seems to be the cool thing to do.  After reading, watching videos and playing with ZFS I&rsquo;m sold on all the features it offers.  However, I must ask, is there a compelling reason to use ZFS over UFS for a single disk?  I&rsquo;d really like to see some comments on this.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rewrite Incoming CallerID]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/02/26/rewrite-incoming-callerid/"/>
+    <updated>2010-02-26T15:38:27-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/02/26/rewrite-incoming-callerid</id>
+    <content type="html"><![CDATA[<p>We&rsquo;re using asterisk, and as part of the dial plan, a 9 is required before the number to make calls out to the PSTN.  Since our phones have a incoming call log, it would be very convient to have asterisk rewrite the CallerID value on calls from the PSTN to include this leading digit.  I found this was rather easy to accomplish.  Adding something similar to the following to whatever extension handles your incoming calls, all CallerID numbers will have a 9 added to the front.
+<code>
+exten =&gt; s,1,Set(CALLERID(num)=9${CALLERID(num)})
+</code>
+And proceed with your normal call routing logic.  Change the preceding digit to whatever matches your system.  If you have several extensions this is going to be used with, you could benefit from using a global variable for the leading digit.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Share List of Files in DropBox Public Folder]]></title>
+    <link href="http://jonmoo.github.io/blog/2010/01/30/share-files-list-in-dropbox-public-folder/"/>
+    <updated>2010-01-30T03:45:53-06:00</updated>
+    <id>http://jonmoo.github.io/blog/2010/01/30/share-files-list-in-dropbox-public-folder</id>
+    <content type="html"><![CDATA[<p>For Windows DropBox users. Here is a simple way to share list of links for your Public folder. This script doesn&rsquo;t show files in sub-directories.</p>
+
+<ol>
+<li>Create a makefilelist.bat file with script to list all files in directory.</li>
+<li>Use Scheduled Tasks to run the .bat file Daily or Weekly, etc as needed; depending on how often you update files in DropBox Public.</li>
+<li>Share the list file with &ldquo;Copy Public Link&rdquo;.</li>
+<li>Open Public Link in a browser. You know have a list of all public files that is up-to-date.</li>
+</ol>
+
+
+<p>You can see an example and download the makefilelist.bat file here:
+<a href="http://dl.dropbox.com/u/4355901/index.html">http://dl.dropbox.com/u/4355901/index.html</a></p>
+
+<p>GitHub:
+<a href="http://github.com/drale/dropboxlistpublic/"> http://github.com/drale/dropboxlistpublic/</a></p>
+]]></content>
+  </entry>
+  
+</feed>
